@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matías Ciaschi - Senior Researcher at CEDLAS, specializing in applied microeconomics, social mobility, and economic inequality">
+    <meta name="keywords" content="Matías Ciaschi, economics, social mobility, CEDLAS, microeconomics, intergenerational mobility, Latin America">
+    <meta name="author" content="Matías Ciaschi">
+    <title>Matías Ciaschi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        header {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: #d4d4d4;
+            border-bottom-color: #d4d4d4;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            min-height: calc(100vh - 300px);
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #1e3a5f;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #1e3a5f;
+            padding-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .publication, .working-paper, .book, .course {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: white;
+            border-left: 3px solid #1e3a5f;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+
+        .authors {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 0.3rem;
+        }
+
+        .journal {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .course-title {
+            font-weight: 600;
+            color: #1e3a5f;
+            font-size: 1.05rem;
+        }
+
+        .course-details {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #1e3a5f;
+            text-decoration: none;
+            padding: 0.7rem 1.5rem;
+            border: 2px solid #1e3a5f;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .contact-links a:hover {
+            background-color: #1e3a5f;
+            color: white;
+        }
+
+        footer {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            main {
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Matías Ciaschi</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="nav-link active" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#publications" class="nav-link" onclick="showSection('publications')">Publications</a></li>
+                    <li><a href="#research" class="nav-link" onclick="showSection('research')">Ongoing Research</a></li>
+                    <li><a href="#teaching" class="nav-link" onclick="showSection('teaching')">Teaching</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="section active">
+            <h2>Welcome!</h2>
+            <div class="intro">
+                <p>I am a Senior Researcher at <a href="https://www.cedlas.econo.unlp.edu.ar/wp/en/" target="_blank" style="color: #1e3a5f;">CEDLAS</a> in Argentina, specializing in applied microeconomics.</p>
+                
+                <p>My work centers on social mobility, focusing on how economic inequality evolves and how opportunities are passed between generations. I also study the impact of economic shocks on labor markets, education, and poverty.</p>
+            </div>
+
+            <h3>Contact</h3>
+            <p><strong>Email:</strong> <a href="mailto:matiasciaschi@gmail.com" style="color: #1e3a5f;">matiasciaschi@gmail.com</a></p>
+            
+            <div class="contact-links">
+                <a href="https://scholar.google.com/citations?hl=es&user=dOJlaiwAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Google Scholar</a>
+                <a href="https://www.dropbox.com/scl/fi/bn39r8ucwq7fdpkfhj0en/Ciaschi_CV1.pdf?rlkey=bjv5iwg30dj2ilxw47hcsyvcd&st=6ebhx0ke&dl=0" target="_blank">CV (PDF)</a>
+                <a href="https://x.com/maticiaschi" target="_blank">Twitter/X</a>
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS SECTION -->
+        <section id="publications" class="section">
+            <h2>Publications</h2>
+            
+            <h3>Journal Articles</h3>
+            
+            <div class="publication">
+                <div class="publication-title">Intergenerational mobility in Latin America: the multiple facets of social status and the role of mothers</div>
+                <div class="authors">With Guido Neidhöfer & Mariana Marchionni</div>
+                <div class="journal">Journal of Population Economics (forthcoming)</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Occupational Mobility in Latin America</div>
+                <div class="authors">With Leonardo Gasparini & Guido Neidhöfer</div>
+                <div class="journal">CEPAL Review (forthcoming)</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Navigating Educational Disruptions: The Gender Divide in Parental Involvement and Children's Learning Outcomes</div>
+                <div class="authors">With Johanna Fajardo-Gonzalez & Mariana Viollaz</div>
+                <div class="journal">Review of Economics of the Household (2024)</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Social mobility and economic development</div>
+                <div class="authors">With Guido Neidhöfer, Leonardo Gasparini & Joaquín Serrano</div>
+                <div class="journal">Journal of Economic Growth (2024)</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">The Impact of COVID-19 on Education in Latin America: Long-Run Implications for Poverty and Inequality</div>
+                <div class="authors">With Jessica Bracco, Leonardo Gasparini, Mariana Marchionni & Guido Neidhöfer</div>
+                <div class="journal">Review of Income and Wealth (2024)</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Job Loss and Household Labor Supply Adjustments in Developing Countries: Evidence from Argentina</div>
+                <div class="authors">With Guido Neidhöfer</div>
+                <div class="journal">World Bank Economic Review (2024)</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">A worldwide tourism-extended Environmental Kuznets Curve. New approaches in a comparative analysis</div>
+                <div class="authors">With Natalia Porto & Diego Pitetti</div>
+                <div class="journal">Journal of Sustainable Tourism (2023)</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Reformulating the tourism-extended environmental Kuznets curve: A quantile regression analysis under environmental legal conditions</div>
+                <div class="authors">With Natalia Porto</div>
+                <div class="journal">Tourism Economics (2021)</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Análisis distributivo utilizando información satelital. El caso de Argentina</div>
+                <div class="journal">Estudios Económicos (2021)</div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-title">Estructura productiva y desigualdad salarial: evidencia para América Latina</div>
+                <div class="authors">With Luciana Galeando & Leonardo Gasparini</div>
+                <div class="journal">El Trimestre Económico (2021)</div>
+            </div>
+
+            <h3>Books & Chapters</h3>
+
+            <div class="book">
+                <div class="publication-title">Wicked contexts pushing for change in Argentina: Tourism, labour informality and PreViaje policy</div>
+                <div class="authors">With Carolina García & Natalia Porto</div>
+                <div class="journal">Tourism Policy-Making in the Context of Contested Wicked Problems: Politics, Paradigm Shifts and Transformation Processes (2024)</div>
+            </div>
+
+            <div class="book">
+                <div class="publication-title">Aportes Recientes a la Economía de la Educación en América Latina</div>
+                <div class="authors">With Mariana Marchionni, Leonardo Gasparini, Santiago Garganta, María Florencia Pinto & Emmanuel Vázquez</div>
+                <div class="journal">La construcción del campo de la Economía de la Educación en Argentina (2023)</div>
+            </div>
+        </section>
+
+        <!-- ONGOING RESEARCH SECTION -->
+        <section id="research" class="section">
+            <h2>Ongoing Research</h2>
+            
+            <h3>Working Papers</h3>
+
+            <div class="working-paper">
+                <div class="publication-title">Trade Shocks and Social Mobility: The Intergenerational Effect of Import Competition in Brazil</div>
+                <div class="authors">With Andrés César, Guillermo Falcone & Guido Neidhöfer</div>
+            </div>
+
+            <div class="working-paper">
+                <div class="publication-title">Intergenerational Mobility of Economic Well-being in Latin America</div>
+                <div class="authors">With Guido Neidhöfer & Leonardo Gasparini</div>
+            </div>
+
+            <div class="working-paper">
+                <div class="publication-title">The intergenerational consequences of enrollment in bad times</div>
+                <div class="authors">With Matías Cortes & Guido Neidhöfer</div>
+            </div>
+
+            <div class="working-paper">
+                <div class="publication-title">Intergenerational mobility in education in Latin America</div>
+                <div class="authors">With Guido Neidhöfer & Leonardo Gasparini</div>
+            </div>
+
+            <div class="working-paper">
+                <div class="publication-title">The impact of a social program on women bargaining power: The case of AUH in Argentina</div>
+                <div class="authors">With Santiago Garganta</div>
+            </div>
+
+            <div class="working-paper">
+                <div class="publication-title">Income distribution in latin america: The evolution in the last 20 years: A global approach</div>
+                <div class="authors">With Leopoldo Tornarolli & Luciana Galeano</div>
+            </div>
+        </section>
+
+        <!-- TEACHING SECTION -->
+        <section id="teaching" class="section">
+            <h2>Teaching</h2>
+
+            <div class="course">
+                <div class="course-title">Microeconomics I</div>
+                <div class="course-details">B.S in Economics, National University of La Plata | Lecturer (2023-2025)</div>
+            </div>
+
+            <div class="course">
+                <div class="course-title">International Economics</div>
+                <div class="course-details">B.S in Economics, National University of La Plata | Lecturer (2021-2025)</div>
+            </div>
+
+            <div class="course">
+                <div class="course-title">Computational Methods</div>
+                <div class="course-details">MSc in Economics, National University of La Plata | Lecturer (2022-2025)</div>
+            </div>
+
+            <div class="course">
+                <div class="course-title">Labor Economics</div>
+                <div class="course-details">MSc in Public Finances, National University of La Plata | Lecturer (2021-2025)</div>
+            </div>
+
+            <div class="course">
+                <div class="course-title">Impact Evaluation</div>
+                <div class="course-details">MSc in Economics, National University of La Plata | Teaching Assistant (2017-2021)</div>
+            </div>
+
+            <div class="course">
+                <div class="course-title">Advanced Microeconomics</div>
+                <div class="course-details">MSc in Economics, National University of La Plata | Teaching Assistant (2017-2019)</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Matías Ciaschi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update nav active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update URL hash
+            window.location.hash = sectionId;
+        }
+
+        // Handle initial page load with hash
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            }
+        });
+    </script>
+</body>
+</html>
